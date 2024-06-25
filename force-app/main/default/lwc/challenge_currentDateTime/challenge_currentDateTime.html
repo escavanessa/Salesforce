@@ -1,11 +1,15 @@
 <template>
   <lightning-card title="Current Date and Time">
     <lightning-button
-      label="Neutral"
+      label="Refresh"
+      onclick={handleClick}
       title="Non-primary action"
       slot="actions"
       class="slds-m-left_x-small"
     ></lightning-button>
-    <h2>Sunday, 11/20/2024, 10:10:10PM</h2>
+    <div>
+      <h1>{datenow}</h1>
+      <h1>{timenow}</h1>
+    </div>
   </lightning-card>
 </template>
