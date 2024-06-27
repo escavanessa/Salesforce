@@ -3,7 +3,8 @@ import { LightningElement, track } from "lwc";
 export default class Challenge_currentDateTime extends LightningElement {
   @track dateNow
 
-  get time() {
+  connectedCallback(){
+    this.date();
   }
 
   get date() {
