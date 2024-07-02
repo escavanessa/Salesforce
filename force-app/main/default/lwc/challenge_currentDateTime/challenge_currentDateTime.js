@@ -1,31 +1,18 @@
 import { LightningElement, track } from "lwc";
 
 export default class Challenge_currentDateTime extends LightningElement {
-  @track timenow;
-  @track datenow;
+  @track dateNow
 
-  get time() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    let timenow = `${hours}:${minutes}:${seconds}`;
-    this.timenow = timenow;
-    return timenow;
+  connectedCallback(){
+    this.date();
   }
 
   get date() {
-    const dateNow = new Date();
-    const month = dateNow.getMonth() + 1;
-    const day = dateNow.getDate();
-    const year = dateNow.getFullYear();
-    let datenow = `${month}/${day}/${year}`;
-    this.datenow = datenow;
-    return datenow;
+    let today = new Date();
+    this.dateNow = today.toISOString();
   }
 
   handleClick() {
-    this.timenow = "check1";
-    this.datenow = "check2";
+    this.date();
   }
 }
