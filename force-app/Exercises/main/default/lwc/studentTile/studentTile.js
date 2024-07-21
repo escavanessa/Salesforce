@@ -11,4 +11,8 @@ export default class StudentTile extends LightningElement {
     get tileSelected() {
         return this.isSelcted ? 'tile selected' : 'tile';
     }
+
+    studentClick() {
+        alert(this.student.Name);
+    }
 }
