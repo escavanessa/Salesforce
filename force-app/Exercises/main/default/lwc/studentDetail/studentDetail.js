@@ -18,16 +18,13 @@ export default class StudentDetail extends LightningElement {
 	// TODO #3: locate a valid Contact ID in your scratch org and store it in the studentId property.
 	// Example: studentId = '003S000001SBAXEIA5';
     //i cant find the contactID lol
-	studentId = '003S000001SBAXEIA5';
+	studentId = '003RK00000KG6ATYAR';
 
 	//TODO #4: use wire service to call getRecord, passing in our studentId and array of fields.
 	//		   Store the result in a property named wiredStudent.
 	@wire(getRecord, { recordId: `$studentId`, fields })
 	wiredStudent;
 		
-	get name() {
-		return this._getDisplayValue(this.wiredStudent.data, FIELD_Name);
-	}
 
 	//TODO #5: We provided a getter for the name field. 
 	// 		   To prepare for Lab 1, create getters for the description, phone, and email fields.
@@ -54,6 +51,10 @@ export default class StudentDetail extends LightningElement {
 			title = "Something went wrong..."
 		}
 		return title;
+	}
+
+	get name() {
+		return this._getDisplayValue(this.wiredStudent.data, FIELD_Name);
 	}
 	
 	_getDisplayValue(data, field) {
